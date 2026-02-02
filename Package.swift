@@ -9,23 +9,9 @@ let package = Package(
 		.macOS(.v10_15),
 	],
 	products: [
-		.library(name: "SwiftSerial", targets: ["SwiftSerial"]),
-		.executable(name: "SerialTerminal", targets: ["SerialTerminal"])
-	],
-	dependencies: [
-		.package(url: "https://github.com/apple/swift-argument-parser.git", .upToNextMinor(from: "1.3.0")),
+		.library(name: "SwiftSerial", targets: ["SwiftSerial"])
 	],
 	targets: [
-		.target(
-			name: "SwiftSerial",
-			dependencies: []
-		),
-		.executableTarget(
-			name: "SerialTerminal",
-			dependencies: [
-				"SwiftSerial",
-				.product(name: "ArgumentParser", package: "swift-argument-parser"),
-			]
-		)
+		.target(name: "SwiftSerial")
 	]
 )
